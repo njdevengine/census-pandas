@@ -1,0 +1,14 @@
+https://jtleider.github.io/censusdata/example1.html
+https://jtleider.github.io/censusdata/
+
+https://pypi.org/project/CensusData
+https://www.census.gov/data/developers/guidance/api-user-guide.html
+https://www.census.gov/content/dam/Census/data/developers/api-user-guide/api-guide.pdf
+https://api.census.gov/data.html
+
+https://api.census.gov/data/2017/acs/acs1/geography.html
+https://api.census.gov/data/2017/acs/acs1/variables.html
+https://api.census.gov/data/2017/acs/acs1/examples.html
+
+#dont forget to pip install censusdata
+#ACS 1-Year Detailed Tables
