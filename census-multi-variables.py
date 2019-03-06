@@ -5,7 +5,8 @@ mydata = censusdata.download('acs5', 2017,
                             ('county subdivision','*')]),
                             ['B19013_001E', 'B01003_001E', 'B01001_002E',
                              'B01001A_001E', 'B01001B_001E', 'B01001D_001E', 'B01001I_001E',
-                             'B23025_004E', 'B08136_001E'])
+                             'B23025_004E', 'B01002A_001E', 'B09001_001E',
+                             'B08136_001E'])
 mydata['city'] = mydata.index
 mydata = mydata.reset_index()
 
@@ -21,7 +22,8 @@ for i in cities:
     
 df = pd.DataFrame({"City": [],"Income":[],"Population":[], "Male Pop (%)":[],
                    "White (%)":[],"Black (%)":[],"Asian (%)":[],"Hispanic (%)":[],
-                   "Employed (%)":[], "Travel Time to Work (mins)":[]})
+                   "Employed (%)":[], "Travel Time to Work (mins)":[],
+                  "Median Age":[], "Age <18 (%)":[]})
 df['City'] = clean
 df['Income'] = mydata["B19013_001E"]
 df['Population'] = mydata['B01003_001E']
@@ -31,4 +33,6 @@ df["Black (%)"] = ((mydata['B01001B_001E'])/(mydata['B01003_001E'])*100).round(2
 df["Asian (%)"] = ((mydata['B01001D_001E'])/(mydata['B01003_001E'])*100).round(2)
 df["Hispanic (%)"] = ((mydata['B01001I_001E'])/(mydata['B01003_001E'])*100).round(2)
 df["Employed (%)"] = ((mydata['B23025_004E'])/(mydata['B01003_001E'])*100).round(2)
+df['Median Age'] = mydata['B01002A_001E']
+df['Age <18 (%)'] = ((mydata['B09001_001E'])/(mydata['B01003_001E'])*100).round(2)
 df["Travel Time to Work (mins)"] = ((mydata['B08136_001E'])/(mydata['B23025_004E'])).round(0)
